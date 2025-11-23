@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.eggs/
+*.pyc
+
+# Virtual env
+venv/
+env/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+
+# Notebook outputs (optional - good to avoid large outputs in commits)
+*.nbconvert.ipynb
+*.out
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Env files
+.env
+*.env
+
+# Misc
+pip-wheel-metadata/
+htmlcov/
+.coverage
+coverage.xml
