@@ -14,6 +14,9 @@ env/
 # Jupyter
 .ipynb_checkpoints/
 
+# Data
+data/raw/*
+data/processed/*
 
 # Notebook outputs (optional - good to avoid large outputs in commits)
 *.nbconvert.ipynb
