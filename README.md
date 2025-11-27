@@ -1,25 +1,51 @@
-# Around the World Project
-This project solves a computational problem involving world cities, graph theory, and shortest-path algorithms.
+# Around the World
+This repository explores a graph-based shortest-path problem using world city data. The project builds a graph where each city connects to its 3 nearest neighbors and evaluates whether a traveler starting in London and always heading east can circumnavigate the globe and return within 80 days.
 
-# Goal
-Starting in London and always traveling east, can one travel around the world and return to London in 80 days?
+**Dataset**
+- Source: Kaggle - World Cities / `worldcitiespop.csv` (see `data/raw/`).
+- Processed CSVs are in `data/processed/` (e.g. `worldcities_processed.csv`, `worldcities_processed_major.csv`).
 
-# Rules
-- Every city is connected to its 3 nearest neighbors
-- Travel times:
-- - 2 hours to the nearest city
-- - 4 hours to the second nearest city
-- - 8 hours to the third nearest city
-- - Add +2 hours if destination is in a different country
-- - Add +2 hours if destination has population > 200,000
+**Rules used to build the graph**
+- Each city connects to its 3 geographically nearest neighbor cities.
+- Base travel times: nearest=2h, 2nd=4h, 3rd=8h.
+- Add +2h if moving to a different country.
+- Add +2h if destination population > 200,000.
 
-# Dataset 
-The project uses the World Cities Database available on Kaggle:
-https://www.kaggle.com/datasets/max-mind/world-cities-database?select=worldcitiespop.csv
+**Repository layout**
+- `data/raw/` : original dataset files (not tracked in repo if `.gitignore` used).
+- `data/processed/` : cleaned and preprocessed CSVs used by notebooks.
+- `notebooks/` : exploratory and analysis notebooks (`01_data_preprocessing.ipynb`, `02_constructing_graph.ipynb`, `03_finding_shortest_path.ipynb`).
+- `src/` : helper modules used by notebooks (e.g. `utils.py`).
 
-Columns include:
-- Country
-- City name
-- Latitude / Longitude
-- Population
-- Region
+**Dependencies**
+- See `requirements.txt` for Python packages. Typical environment:
+
+	- Python 3.8+ (recommended)
+	- `pandas`, `networkx`, `geopy`, `numpy`, `matplotlib`, `jupyter`
+
+**Quick setup (Linux / macOS)**
+1. Create and activate a virtual environment:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+2. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Open notebooks:
+
+```bash
+jupyter lab notebooks
+```
+
+**How to run the analysis**
+- Run the notebooks in order: `01_data_preprocessing.ipynb` → `02_constructing_graph.ipynb` → `03_finding_shortest_path.ipynb`.
+- Notebooks use the `data/processed/` CSVs; re-run preprocessing if you change raw inputs.
+
+**Notes:**
+Please, refer to the markdown comments in the notebooks for the final logic of the project and the reasoning behind it
