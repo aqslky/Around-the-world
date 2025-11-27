@@ -6,8 +6,8 @@ This repository explores a graph-based shortest-path problem using world city da
 - Processed CSVs are in `data/processed/` (e.g. `worldcities_processed.csv`, `worldcities_processed_major.csv`).
 
 **Rules used to build the graph**
-- Each city connects to its 3 geographically nearest neighbor cities.
-- Base travel times: nearest=2h, 2nd=4h, 3rd=8h.
+- Each city connects to its 4 geographically nearest neighbor cities.
+- Base travel times: nearest=2h, 2nd=4h, 3rd=8h, 4th=50h.
 - Add +2h if moving to a different country.
 - Add +2h if destination population > 200,000.
 
