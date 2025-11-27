@@ -1,5 +1,5 @@
 # Around the World
-This repository explores a graph-based shortest-path problem using world city data. The project builds a graph where each city connects to its 3 nearest neighbors and evaluates whether a traveler starting in London and always heading east can circumnavigate the globe and return within 80 days.
+This repository explores a graph-based shortest-path problem using world city data. The project builds a graph where each city connects to its 4 (see comments in the notebooks) nearest neighbors and evaluates whether a traveler starting in London and always heading east can circumnavigate the globe and return within 80 days.
 
 **Dataset**
 - Source: Kaggle - World Cities / `worldcitiespop.csv` (see `data/raw/`).
